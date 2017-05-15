@@ -3,7 +3,7 @@ class Curiosidad
     @label = label
   end
   
-  def afficher
+  def getLabel
     return @label
   end
 end
