@@ -20,6 +20,9 @@
                     <h3><%= curiosity.name %></h3>
                     <p><%= curiosity.description %></p>
                     <p><%= curiosity.category %></p>
+                    <p>
+                        <%= link_to 'Voir les details', curiosity_path(curiosity) %>
+                    </p>
                 </div> <!-- end .col-sm-3 -->
             <% if index == 3 || index == 7 %>
                 </div> <!-- end .row -->
