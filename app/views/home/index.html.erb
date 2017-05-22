@@ -23,6 +23,11 @@
                     <p>
                         <%= link_to 'Voir les details', curiosity_path(curiosity) %>
                     </p>
+                    <p>
+                        <%= link_to curiosity_path(curiosity), method: :delete, data: { confirm: "Are you sure?" } do %>
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <% end %>
+                    </p>
                 </div> <!-- end .col-sm-3 -->
             <% if index == 3 || index == 7 %>
                 </div> <!-- end .row -->
