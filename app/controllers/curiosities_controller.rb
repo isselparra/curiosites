@@ -14,6 +14,10 @@ class CuriositiesController< ApplicationController
         @curiosity = Curiosity.new                      # crée une curiosité 'vide'
     end
     
+    def edit
+        @curiosity = Curiosity.find(params[:id])
+    end
+    
     def create
         @curiosity = Curiosity.new(curiosity_params)
         # instance une nouvelle curiosité
@@ -24,6 +28,16 @@ class CuriositiesController< ApplicationController
             redirect_to @curiosity # alors on l'affiche
         else
             render 'new' # sinon on reste sur la page de création
+        end
+    end
+    
+    def update
+        @curiosity = Curiosity.find(params[:id])
+        
+        if @curiosity.update(curiosity_params)
+            redirect_to @curiosity
+        else
+            render 'edit'
         end
     end
     

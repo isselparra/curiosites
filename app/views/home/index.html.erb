@@ -7,6 +7,7 @@
 <h2>Ses Curiosités</h2>
 
 <p>
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     <%= link_to 'Nouvelle Curiosité', new_curiosity_path %>
 </p>
 <section id="curiosities">
@@ -26,6 +27,9 @@
                     <p><%= curiosity.category %></p>
                     <p>
                         <%= link_to 'Voir les details', curiosity_path(curiosity) %>
+                    </p>
+                    <p>
+                        <%= link_to 'Modifier les details', edit_curiosity_path(curiosity) %>
                     </p>
                     <p>
                         <%= link_to curiosity_path(curiosity), method: :delete, data: { confirm: "Are you sure?" } do %>

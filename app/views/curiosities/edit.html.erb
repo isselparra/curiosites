@@ -1,0 +1,20 @@
+<h1>Edition d'une curiosité</h1>
+
+<%= form_for :curiosity, url: curiosity_path(@curiosity), method: :patch do |c| %>
+    <% if @curiosity.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@curiosity.errors.count, "error") %> prohibited this artible from being saved:
+            </h2>
+            <ul>
+                <% @curiosity.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    
+    <%= render partial: 'form', locals: { c: c } %>
+    
+    <%= c.submit 'Modifier la curiosité', class: 'btn btn-default' %>
+<% end %>

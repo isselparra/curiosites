@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   
   post 'curiosities', to: 'curiosities#create', as: 'curiosities'
   get 'curiosities/new', to: 'curiosities#new', as: 'new_curiosity'
+  get 'curiosities/:id/edit', to: 'curiosities#edit', as: 'edit_curiosity'
   get 'curiosities/:id', to: 'curiosities#show', as: 'curiosity'
+  patch 'curiosities/:id', to: 'curiosities#update'
+  put 'curiosities/:id', to: 'curiosities#update'
   delete 'curiosities/:id', to: 'curiosities#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
