@@ -7,8 +7,10 @@
 <h2>Ses Curiosités</h2>
 
 <p>
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-    <%= link_to 'Nouvelle Curiosité', new_curiosity_path %>
+     <%= link_to new_curiosity_path do %>
+         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+         Nouvelle Curiosité
+     <% end %>
 </p>
 <section id="curiosities">
     <div class="container">
